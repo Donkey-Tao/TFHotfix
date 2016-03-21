@@ -86,8 +86,10 @@ NSString * const kTFFixSyncURL        = @"";
                                                                      progress:nil
                                                                   destination:^NSURL *(NSURL *targetPath, NSURLResponse *response)
                                               {
+                                                  [[NSFileManager defaultManager] removeItemAtURL:_localFilePath error:nil];
                                                   return _localFilePath;
-                                              } completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error)
+                                              }
+                                                            completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error)
                                               {
                                                   NSLog(@"File downloaded to: %@", filePath);
                                                   __typeof(&*weakSelf) strongSelf = weakSelf;
