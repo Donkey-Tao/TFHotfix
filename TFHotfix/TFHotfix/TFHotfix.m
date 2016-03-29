@@ -11,7 +11,6 @@
 #import <AFNetworking/AFNetworking.h>
 #import "RegisterApp.h"
 #import "SyncHotfix.h"
-#import "DownLoadFixFile.h"
 
 NSString * const kTFFixFileName       = @"fixfile";
 NSString * const kTFFixRegisterAppURL = @"";
