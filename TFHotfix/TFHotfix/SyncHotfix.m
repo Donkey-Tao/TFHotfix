@@ -27,7 +27,7 @@
 }
 
 - (NSString *)requestUrl {
-    return @"http://hotfix.timeface.cn/sync";
+    return @"http://hotfix.timeface.org/sync";
 }
 
 - (id)requestArgument {

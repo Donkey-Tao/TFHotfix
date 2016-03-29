@@ -27,7 +27,7 @@
 }
 
 - (NSString *)requestUrl {
-    return @"http://hotfix.timeface.cn/register";
+    return @"http://hotfix.timeface.org/register";
 }
 
 - (id)requestArgument {

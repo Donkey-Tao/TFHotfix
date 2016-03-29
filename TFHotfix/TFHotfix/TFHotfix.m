@@ -38,7 +38,7 @@ NSString * const kTFFixSyncURL        = @"";
     if (self) {
         BOOL isDir = YES;
         NSError *error = nil;
-        NSString *diskCachePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"Files/RepairTool"];
+        NSString *diskCachePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0] stringByAppendingPathComponent:@"cn.timeface.file/repairtool"];
         BOOL directoryExists = [[NSFileManager defaultManager] fileExistsAtPath:diskCachePath isDirectory:&isDir];
         if (!directoryExists) {
             [[NSFileManager defaultManager] createDirectoryAtURL:[NSURL fileURLWithPath:diskCachePath]
