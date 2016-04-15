@@ -27,9 +27,6 @@
     [btn setBackgroundColor:[UIColor grayColor]];
     [self.view addSubview:btn];
     
-    
-    
-    
     UIButton *btn2 = [[UIButton alloc] initWithFrame:CGRectMake(0, 200, [UIScreen mainScreen].bounds.size.width, 50)];
     [btn2 setTitle:@"sync" forState:UIControlStateNormal];
     [btn2 addTarget:self action:@selector(handleBtn2:) forControlEvents:UIControlEventTouchUpInside];
@@ -56,6 +53,7 @@
 }
 
 - (void)handleBtn3:(id)sender {
+    
     OtherViewController *otherViewController = [[OtherViewController alloc] init];
     [self.navigationController pushViewController:otherViewController animated:YES];
 }

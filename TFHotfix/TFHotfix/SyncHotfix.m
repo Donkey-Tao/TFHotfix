@@ -26,13 +26,19 @@
     return TFRequestMethodPost;
 }
 
+
+- (TFRequestSerializerType)requestSerializerType {
+    return TFRequestSerializerTypeJSON;
+}
+
 - (NSString *)requestUrl {
-    return @"http://hotfix.timeface.org/sync";
+    return @"http://hotfix.timeface.cn/api/sync";
 }
 
 - (id)requestArgument {
     return @{@"appkey": _appKey,
-             @"version": _version};
+             @"version": _version,
+             @"platform":@"1"};
 }
 
 @end

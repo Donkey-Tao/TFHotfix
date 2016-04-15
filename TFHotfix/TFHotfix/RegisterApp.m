@@ -26,8 +26,12 @@
     return TFRequestMethodPost;
 }
 
+- (TFRequestSerializerType)requestSerializerType {
+    return TFRequestSerializerTypeJSON;
+}
+
 - (NSString *)requestUrl {
-    return @"http://hotfix.timeface.org/register";
+    return @"http://hotfix.timeface.cn/api/register";
 }
 
 - (id)requestArgument {

@@ -65,7 +65,7 @@ NSString * const kTFFixSyncURL        = @"";
 - (void)sync {
     SyncHotfix *syncHotfix = [[SyncHotfix alloc] initWithAppKey:_appKey];
     [syncHotfix startWithCompletionBlockWithSuccess:^(__kindof TFBaseRequest *request) {
-        NSString *fileUrl = [request.responseObject objectForKey:@"fileUrl"];
+        NSString *fileUrl = [[request.responseObject objectForKey:@"fileUrl"] objectAtIndex:0];
         if (fileUrl.length) {
             [self downloadFixFile:fileUrl];
         }
