@@ -34,7 +34,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   TFNetwork:
-    :commit: bfae9beb343f3c99f32ee84d8d1bad7d99ef7b9d
+    :commit: 31ed7c012f1fba833dbd3dc29510f73ad262a1d3
     :git: https://github.com/TimeFaceCoder/TFNetwork.git
 
 SPEC CHECKSUMS:

@@ -19,8 +19,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    [[TFHotfix sharedInstance] startWithAppKey:@"573025beae3a47119810bc782025e916"];
     [TFHotfix fixOnSandBox:YES];
+
+    [[TFHotfix sharedInstance] startWithAppKey:@"573025beae3a47119810bc782025e916"];
     [[TFHotfix sharedInstance] sync];
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     ViewController *rootViewController = [[ViewController alloc] init];

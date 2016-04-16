@@ -24,7 +24,7 @@
 }
 
 - (TFRequestMethod)requestMethod {
-    return TFRequestMethodGet;
+    return TFRequestMethodPost;
 }
 
 - (TFRequestSerializerType)requestSerializerType {
