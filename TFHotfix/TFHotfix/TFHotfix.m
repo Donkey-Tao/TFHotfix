@@ -65,9 +65,14 @@ NSString * const kTFFixSyncURL        = @"";
 - (void)sync {
     SyncHotfix *syncHotfix = [[SyncHotfix alloc] initWithAppKey:_appKey];
     [syncHotfix startWithCompletionBlockWithSuccess:^(__kindof TFBaseRequest *request) {
-        NSString *fileUrl = [[request.responseObject objectForKey:@"fileUrl"] objectAtIndex:0];
-        if (fileUrl.length) {
-            [self downloadFixFile:fileUrl];
+        if ([request.responseObject objectForKey:@"fileUrl"] && [[request.responseObject objectForKey:@"fileUrl"] count] > 0) {
+            NSString *fileUrl = [[request.responseObject objectForKey:@"fileUrl"] objectAtIndex:0];
+            if (fileUrl.length) {
+                [self downloadFixFile:fileUrl];
+            }
+        }
+        else {
+            [self removeLocalScript];
         }
     } failure:^(__kindof TFBaseRequest *request) {
         
@@ -99,12 +104,23 @@ NSString * const kTFFixSyncURL        = @"";
     [downloadTask resume];
 }
 
+- (void)removeLocalScript {
+    [[NSFileManager defaultManager] removeItemAtURL:_localFilePath error:nil];
+    [JPEngine evaluateScript:@"defineClass('TFHotfix', {defaultMethod: function() {},});"];
+}
+
 - (void)evaluateLoacalScript {
     NSError *error = nil;
-    NSString *script = [NSString stringWithContentsOfURL:_localFilePath encoding:NSUTF8StringEncoding error:&error];
+    NSString *script = [NSString stringWithContentsOfURL:_localFilePath
+                                                encoding:NSUTF8StringEncoding
+                                                   error:&error];
     if (!error) {
         [JPEngine evaluateScript:script];
     }
+}
+
+- (void)defaultMethod {
+    
 }
 
 @end

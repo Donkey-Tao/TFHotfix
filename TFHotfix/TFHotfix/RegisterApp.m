@@ -23,7 +23,7 @@
 }
 
 - (TFRequestMethod)requestMethod {
-    return TFRequestMethodPost;
+    return TFRequestMethodGet;
 }
 
 - (TFRequestSerializerType)requestSerializerType {
@@ -31,7 +31,7 @@
 }
 
 - (NSString *)requestUrl {
-    return @"http://hotfix.timeface.cn/api/register";
+    return @"http://stg2.v5time.net/hotfix/hotfix/register";
 }
 
 - (id)requestArgument {

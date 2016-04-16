@@ -23,7 +23,7 @@
 }
 
 - (TFRequestMethod)requestMethod {
-    return TFRequestMethodPost;
+    return TFRequestMethodGet;
 }
 
 
@@ -32,7 +32,7 @@
 }
 
 - (NSString *)requestUrl {
-    return @"http://hotfix.timeface.cn/api/sync";
+    return @"http://stg2.v5time.net/hotfix/hotfix/sync";
 }
 
 - (id)requestArgument {
