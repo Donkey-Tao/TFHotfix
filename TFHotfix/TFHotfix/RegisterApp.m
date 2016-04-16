@@ -7,6 +7,7 @@
 //
 
 #import "RegisterApp.h"
+#import "TFHotfix.h"
 
 @implementation RegisterApp {
     NSString *_appKey;
@@ -31,7 +32,10 @@
 }
 
 - (NSString *)requestUrl {
-    return @"http://stg2.v5time.net/hotfix/hotfix/register";
+    if ([TFHotfix sandBox]) {
+        return @"http://stg2.v5time.net/hotfix/hotfix/register";
+    }
+    return @"http://hotfix.timeface.cn/hotfix/hotfix/register";
 }
 
 - (id)requestArgument {

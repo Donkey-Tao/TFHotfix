@@ -8,7 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+static BOOL isSandBox;
+
 @interface TFHotfix : NSObject
+
++ (void)fixOnSandBox:(BOOL)sandBox;
+
++ (BOOL)sandBox;
 
 + (TFHotfix *)sharedInstance;
 /**

@@ -23,6 +23,15 @@ NSString * const kTFFixSyncURL        = @"";
     NSString *_version;
 }
 
++ (void)fixOnSandBox:(BOOL)sandBox {
+    isSandBox = sandBox;
+}
+
++ (BOOL)sandBox {
+    return isSandBox;
+}
+
+
 + (TFHotfix *)sharedInstance {
     static id sharedInstance = nil;
     static dispatch_once_t onceToken;

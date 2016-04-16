@@ -7,6 +7,7 @@
 //
 
 #import "SyncHotfix.h"
+#import "TFHotfix.h"
 
 @implementation SyncHotfix {
     NSString *_appKey;
@@ -32,7 +33,10 @@
 }
 
 - (NSString *)requestUrl {
-    return @"http://stg2.v5time.net/hotfix/hotfix/sync";
+    if ([TFHotfix sandBox]) {
+        return @"http://stg2.v5time.net/hotfix/hotfix/sync";
+    }
+    return @"http://hotfix.timeface.cn/hotfix/hotfix/sync";
 }
 
 - (id)requestArgument {
