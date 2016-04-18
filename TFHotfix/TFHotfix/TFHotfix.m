@@ -65,8 +65,16 @@ NSString * const kTFFixSyncURL        = @"";
     _appKey = appKey;
     RegisterApp *registerApp = [[RegisterApp alloc] initWithAppKey:appKey];
     [registerApp startWithCompletionBlockWithSuccess:^(__kindof TFBaseRequest *request) {
-        [JPEngine startEngine];
-        [self evaluateLoacalScript];
+        if ([[request.responseObject objectForKey:@"status"] boolValue]) {
+            if ([request.responseObject objectForKey:@"clean"]) {
+                //清除本地文件
+                [[NSFileManager defaultManager] removeItemAtURL:_localFilePath error:nil];
+            }
+            else {
+                [JPEngine startEngine];
+                [self evaluateLoacalScript];
+            }
+        }
     } failure:^(__kindof TFBaseRequest *request) {
     }];
 }
