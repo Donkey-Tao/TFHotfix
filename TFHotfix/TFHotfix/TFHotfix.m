@@ -8,6 +8,7 @@
 
 #import "TFHotfix.h"
 #import <JSPatch/JPEngine.h>
+#import "TFCleaner.h"
 #import <AFNetworking/AFNetworking.h>
 #import "RegisterApp.h"
 #import "SyncHotfix.h"
@@ -123,7 +124,7 @@ NSString * const kTFFixSyncURL        = @"";
 
 - (void)removeLocalScript {
     [[NSFileManager defaultManager] removeItemAtURL:_localFilePath error:nil];
-    [JPEngine evaluateScript:@"defineClass('TFHotfix', {defaultMethod: function() {},});"];
+    [TFCleaner cleanAll];
 }
 
 - (void)evaluateLoacalScript {
@@ -134,10 +135,6 @@ NSString * const kTFFixSyncURL        = @"";
     if (!error) {
         [JPEngine evaluateScript:script];
     }
-}
-
-- (void)defaultMethod {
-    
 }
 
 @end
