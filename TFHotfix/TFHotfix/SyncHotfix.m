@@ -35,7 +35,7 @@
     if ([TFHotfix sandBox]) {
         return @"http://stg2.v5time.net/hotfix/hotfix/sync";
     }
-    return @"http://hotfix.timeface.cn/hotfix/hotfix/sync";
+    return @"http://hotfix.timeface.cn/hotfix/sync";
 }
 
 - (id)requestArgument {

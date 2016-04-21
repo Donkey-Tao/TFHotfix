@@ -35,7 +35,7 @@
     if ([TFHotfix sandBox]) {
         return @"http://stg2.v5time.net/hotfix/hotfix/register";
     }
-    return @"http://hotfix.timeface.cn/hotfix/hotfix/register";
+    return @"http://hotfix.timeface.cn/hotfix/register";
 }
 
 - (id)requestArgument {
