@@ -7,8 +7,9 @@ Pod::Spec.new do |s|
   s.author             = { "Melvin" => "yangmin@timeface.cn" }
   s.social_media_url   = "http://www.timeface.cn"
   s.ios.deployment_target = "8.0"
-  s.source       = { :git => "https://github.com/TimeFaceCoder/TFHotfix.git"}
+  s.source       = { :git => "https://github.com/TimeFaceCoder/TFHotfix.git",:tag=>'0.0.1'}
   s.source_files  = "TFHotfix/TFHotfix/**/*.{h,m,c}"
   s.requires_arc = true
   s.dependency 'JSPatch'
+  s.dependency 'TFNetwork'
 end
