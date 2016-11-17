@@ -28,7 +28,7 @@
 }
 
 - (TFRequestSerializerType)requestSerializerType {
-    return TFRequestSerializerTypeJSON;
+    return TFRequestSerializerTypeHTTP;
 }
 
 - (NSString *)requestUrl {
